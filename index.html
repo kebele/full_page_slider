@@ -1,0 +1,125 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>full page slider</title>
+  </head>
+  <body>
+    <!-- thanks to 
+        online tutorials
+        https://www.youtube.com/channel/UCbwXnUipZsLfUckBPsC7Jog
+     -->
+    <header>
+      <a href="#" class="logo">products</a>
+      <ul>
+        <li><a href="#">home</a></li>
+        <li><a href="#">about</a></li>
+        <li><a href="#">store</a></li>
+        <li><a href="#">contact</a></li>
+      </ul>
+    </header>
+    <section class="banner">
+      <div class="imgBx">
+        <img src="pexels-aleksey-kuprikov-4024484.jpg" alt="" class="active" />
+        <img src="pexels-alexgtacar-1592384.jpg" alt="" />
+        <img src="pexels-garvin-st-villier-3311574.jpg" alt="" />
+        <img src="pexels-mike-241316.jpg" alt="" />
+        <img src="pexels-street-3422964.jpg" alt="" />
+        <img src="pexels-william-sun-1098662.jpg" alt="" />
+      </div>
+      <div class="contentBx">
+        <div class="active">
+          <h2>slide one</h2>
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cupiditate
+            consequatur provident delectus saepe esse impedit itaque repudiandae
+            officiis fugit alias?
+          </p>
+          <a href="#">details</a>
+        </div>
+        <div>
+          <h2>slide two</h2>
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cupiditate
+            consequatur provident delectus saepe esse impedit itaque repudiandae
+            officiis fugit alias?
+          </p>
+          <a href="#">details</a>
+        </div>
+        <div>
+          <h2>slide three</h2>
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cupiditate
+            consequatur provident delectus saepe esse impedit itaque repudiandae
+            officiis fugit alias?
+          </p>
+          <a href="#">details</a>
+        </div>
+        <div>
+          <h2>slide four</h2>
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cupiditate
+            consequatur provident delectus saepe esse impedit itaque repudiandae
+            officiis fugit alias?
+          </p>
+          <a href="#">details</a>
+        </div>
+        <div>
+          <h2>slide five</h2>
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cupiditate
+            consequatur provident delectus saepe esse impedit itaque repudiandae
+            officiis fugit alias?
+          </p>
+          <a href="#">details</a>
+        </div>
+
+        <div>
+          <h2>slide six</h2>
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cupiditate
+            consequatur provident delectus saepe esse impedit itaque repudiandae
+            officiis fugit alias?
+          </p>
+          <a href="#">details</a>
+        </div>
+      </div>
+      <ul class="controls">
+        <li onclick="prevSlide(); prevSlideText()"></li>
+        <li onclick="nextSlide(); nextSlideText()"></li>
+      </ul>
+    </section>
+
+    <script>
+      const imgBx = document.querySelector(".imgBx");
+      const slides = imgBx.getElementsByTagName("img");
+      let i = 0;
+
+      const contentBx = document.querySelector(".contentBx");
+      const slidesText = contentBx.getElementsByTagName("div");
+      let j = 0;
+      function nextSlide() {
+        slides[i].classList.remove("active");
+        i = (i + 1) % slides.length;
+        slides[i].classList.add("active");
+      }
+      function prevSlide() {
+        slides[i].classList.remove("active");
+        i = (i - 1 + slides.length) % slides.length;
+        slides[i].classList.add("active");
+      }
+
+      function nextSlideText() {
+        slidesText[j].classList.remove("active");
+        j = (j + 1) % slidesText.length;
+        slidesText[j].classList.add("active");
+      }
+      function prevSlideText() {
+        slidesText[j].classList.remove("active");
+        j = (j - 1 + slidesText.length) % slidesText.length;
+        slidesText[j].classList.add("active");
+      }
+    </script>
+  </body>
+</html>
